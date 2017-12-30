@@ -2,10 +2,10 @@
 eTechBuddy.com is Arya's portfolio and blogging site.
 
 <!-- Badges section here. -->
-[![Build Status](https://img.shields.io/travis/aryashreep/ngetb/master.svg?label=travis)](https://travis-ci.org/aryashreep/ngetb)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/aryashreep/ngetb/master.svg?label=circleci)](https://circleci.com/gh/aryashreep/ngetb)
-[![Dependency Status](https://david-dm.org/aryashreep/ngetb.svg)](https://david-dm.org/aryashreep/ngetb)
-[![devDependency Status](https://david-dm.org/aryashreep/ngetb/dev-status.svg)](https://david-dm.org/aryashreep/ngetb?type=dev)
+[![Build Status](https://img.shields.io/travis/aryashreep/aryashreep.github.io/devlopment.svg?label=travis)](https://travis-ci.org/aryashreep/aryashreep.github.io)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/aryashreep/aryashreep.github.io/devlopment.svg?label=circleci)](https://circleci.com/gh/aryashreep/aryashreep.github.io)
+[![Dependency Status](https://david-dm.org/aryashreep/aryashreep.github.io.svg)](https://david-dm.org/aryashreep/aryashreep.github.io)
+[![devDependency Status](https://david-dm.org/aryashreep/aryashreep.github.io/dev-status.svg)](https://david-dm.org/aryashreep/aryashreep.github.io?type=dev)
 
 [![npm](https://img.shields.io/npm/v/%40angular/cli.svg)](https://www.npmjs.com/package/@angular/cli)
 [![npm](https://img.shields.io/npm/v/%40angular/cli/next.svg)](https://www.npmjs.com/package/@angular/cli)
@@ -13,8 +13,8 @@ eTechBuddy.com is Arya's portfolio and blogging site.
 
 [![Caretaker](https://img.shields.io/badge/caretaker-aryashreep-blue.svg)](https://github.com/aryashreep)
 
-[![GitHub forks](https://img.shields.io/github/forks/aryashreep/ngetb.svg?style=social&label=Fork)](https://github.com/aryashreep/ngetb/fork)
-[![GitHub stars](https://img.shields.io/github/stars/aryashreep/ngetb.svg?style=social&label=Star)](https://github.com/aryashreep/ngetb)
+[![GitHub forks](https://img.shields.io/github/forks/aryashreep/aryashreep.github.io.svg?style=social&label=Fork)](https://github.com/aryashreep/aryashreep.github.io/fork)
+[![GitHub stars](https://img.shields.io/github/stars/aryashreep/aryashreep.github.io.svg?style=social&label=Star)](https://github.com/aryashreep/aryashreep.github.io)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
 
