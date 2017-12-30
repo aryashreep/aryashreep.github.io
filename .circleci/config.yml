@@ -6,7 +6,7 @@ version: 2
 
 jobs:
     karma:
-        working_directory: ~/ngetb
+        working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
         docker:
             - image: circleci/node:6-browsers
@@ -26,7 +26,7 @@ jobs:
                 paths:
                     - ./node_modules
             - run:
-                name: Install ngetb
+                name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli@latest
                   sudo touch test-results.xml
