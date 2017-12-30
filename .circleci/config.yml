@@ -1,0 +1,46 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+jobs:
+    karma:
+        working_directory: ~/ngetb
+        # The primary container is an instance of the first list image listed. Your test commands run in this container.
+        docker:
+            - image: circleci/node:6-browsers
+              environment:
+                  CHROME_BIN: "/usr/bin/google-chrome"
+            # Specify service dependencies here if necessary
+            # CircleCI maintains a library of pre-built images
+            # documented at https://circleci.com/docs/2.0/circleci-images/
+            # - image: circleci/mongo:3.4.4
+        steps:
+            - checkout
+            - run:
+                name: Install node_modules with npm
+                command: npm install
+            - save_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+                paths:
+                    - ./node_modules
+            - run:
+                name: Install ngetb
+                command: |
+                  sudo npm install -g @angular/cli@latest
+                  sudo touch test-results.xml
+                  sudo chmod 777 test-results.xml
+
+            - run:
+                name: Run unit tests with karma
+                command: ng test --watch=false
+
+            - store_test_results:
+                path: test-results.xml         
+
+workflows:
+  version: 2
+  default_workflow:
+    jobs:
+      - karma
