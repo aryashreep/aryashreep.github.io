@@ -40,17 +40,15 @@ jobs:
 
             - store_test_results:
                 path: test-results.xml
-deployment:
-  feature:
-    branch: master
-    commands:
-      - ng build --prod --build-optimizer --no-progress
-      - angular-cli-ghpages --no-silent --branch=master
-  production:
-    branch: master
-    commands:
-      - ng build --prod --build-optimizer --no-progress
-      - angular-cli-ghpages --no-silent --branch=master
+                
+            - run:
+                name: Build
+                command: ng build --prod --build-optimizer --no-progress
+                
+            - deploy:
+                branch: master
+                command: |
+                  angular-cli-ghpages --no-silent --branch=master
                 
 workflows:
   version: 2
