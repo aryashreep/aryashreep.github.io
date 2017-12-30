@@ -30,6 +30,7 @@ jobs:
                 command: |
                   sudo npm install -g @angular/cli@latest
                   sudo npm install -g angular-cli-ghpages
+                  sudo npm install typescript@'>=2.4.2 <2.6.0'
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
 
@@ -41,17 +42,29 @@ jobs:
             - store_test_results:
                 path: test-results.xml
                 
-            - run:
-                name: Build
-                command: ng build --prod --build-optimizer --no-progress
-                
-            - deploy:
-                branch: master
-                command: |
-                  angular-cli-ghpages --no-silent --branch=master
-                
+deployment:
+  production:
+    branch: master
+    commands:
+      - ng build --prod --build-optimizer --no-progress
+      # here we build the docker container, the --rm=false is needed because some issue with
+      # circle build leading to uncritical error during the build
+      - docker build --rm=false -t $REPO:prod -f ./deployment/production/Dockerfile .
+      # you can remove the -v and the second 443 port if you don't use SSL
+      - docker run -d -i -v ~/:/etc/nginx/certs -p 80:80 -p 443:443 $REPO:prod
+      # we want to test our newly built docker file to see if it's properly responding the static html
+      - curl --retry 10 --retry-delay 5 -k -v https://localhost | grep '<app-root>'
+      # docker image tagging, i will explain it in the article in mroe detail
+      - angular-cli-ghpages --no-silent --branch=master
+                  
 workflows:
   version: 2
   default_workflow:
     jobs:
       - karma
+
+general:
+  branches:
+    only:
+      - development
+      - master
