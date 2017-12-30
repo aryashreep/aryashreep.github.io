@@ -36,8 +36,8 @@ jobs:
             - run:
                 name: Run unit tests with karma
                 command: |
-                  ng test --watch false -cc
-                  ng e2e
+                  ng test --no-silent --watch false -cc
+                  ng e2e --no-silent
 
             - store_test_results:
                 path: test-results.xml         
