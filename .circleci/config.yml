@@ -29,16 +29,33 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli@latest
+                  sudo npm install -g angular-cli-ghpages
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
 
             - run:
                 name: Run unit tests with karma
-                command: ng test --watch=false
+                command: |
+                  ng test --watch false -cc
+                  ng e2e
 
             - store_test_results:
                 path: test-results.xml         
 
+compile:
+  override:
+    - ng build --prod --build-optimizer --no-progress
+
+deployment:
+  feature:
+    branch: master
+    commands:
+      - angular-cli-ghpages --no-silent --branch=master
+  production:
+    branch: master
+    commands:
+      - angular-cli-ghpages --no-silent --branch=master
+                
 workflows:
   version: 2
   default_workflow:
