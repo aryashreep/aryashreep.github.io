@@ -47,14 +47,6 @@ deployment:
     branch: master
     commands:
       ng build --prod --build-optimizer --no-progress
-      # here we build the docker container, the --rm=false is needed because some issue with
-      # circle build leading to uncritical error during the build
-      docker build --rm=false -t $REPO:prod -f ./deployment/production/Dockerfile .
-      # you can remove the -v and the second 443 port if you don't use SSL
-      docker run -d -i -v ~/:/etc/nginx/certs -p 80:80 -p 443:443 $REPO:prod
-      # we want to test our newly built docker file to see if it's properly responding the static html
-      curl --retry 10 --retry-delay 5 -k -v https://localhost | grep '<app-root>'
-      # docker image tagging, i will explain it in the article in mroe detail
       angular-cli-ghpages --no-silent --branch=master
                   
 workflows:
