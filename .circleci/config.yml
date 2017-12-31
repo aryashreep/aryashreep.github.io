@@ -29,17 +29,12 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
-                  sudo npm install typescript@'>=2.4.2 <2.6.0'
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
 
             - run:
                 name: Run unit tests with karma
                 command: ng test --watch false -cc
-
-            - run:
-                name: Run end to end test
-                command: ng e2e               
                 
             - store_test_results:
                 path: test-results.xml
@@ -63,7 +58,6 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
-                  sudo npm install typescript@'>=2.4.2 <2.6.0'
                   sudo mkdir dist
                   sudo chmod 777 dist
 
@@ -92,7 +86,6 @@ jobs:
                 command: |
                   sudo npm install -g @angular/cli
                   sudo npm install -g angular-cli-ghpages
-                  sudo npm install typescript@'>=2.4.2 <2.6.0'
                   sudo mkdir dist
                   sudo chmod 777 dist
 
