@@ -103,6 +103,3 @@ workflows:
       - unit-test
       - build-job
       - deploy-job
-    filters:
-      branches:
-        only: master
