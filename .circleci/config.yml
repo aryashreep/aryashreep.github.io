@@ -95,7 +95,7 @@ jobs:
             - run:
                 name: Deployment the build
                 command: angular-cli-ghpages --no-silent --branch=master
-        
+
 workflows:
   version: 2
   default-workflow:
