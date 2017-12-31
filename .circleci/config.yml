@@ -5,7 +5,7 @@
 version: 2
 
 jobs:
-    karma:
+    unit-test:
         working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
         docker:
@@ -36,26 +36,77 @@ jobs:
 
             - run:
                 name: Run unit tests with karma
-                command: |
-                  ng test --watch false -cc
+                command: ng test --watch false -cc
 
+            - run:
+                name: Run end to end test
+                command: ng e2e               
+                
             - store_test_results:
                 path: test-results.xml
-                
-deployment:
-  production:
-    branch: master
-    commands:
-      ng build --prod --build-optimizer --no-progress
-      angular-cli-ghpages --no-silent --branch=master
-                  
+
+    build-job:
+        working_directory: ~/aryashreep.github.io
+        # The primary container is an instance of the first list image listed. Your test commands run in this container.
+        docker:
+            - image: circleci/node:6-browsers
+
+        steps:
+            - checkout
+            - run:
+                name: Install node_modules with npm
+                command: npm install
+            - save_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+                paths:
+                    - ./node_modules
+            - run:
+                name: Install aryashreep.github.io
+                command: |
+                  sudo npm install -g @angular/cli@latest
+                  sudo npm install typescript@'>=2.4.2 <2.6.0'
+
+            - run:
+                name: Run build
+                command: ng build --prod
+
+    deploy-job:
+        working_directory: ~/aryashreep.github.io
+        # The primary container is an instance of the first list image listed. Your test commands run in this container.
+        docker:
+            - image: circleci/node:6-browsers
+
+        steps:
+            - checkout
+            - run:
+                name: Install node_modules with npm
+                command: npm install
+            - save_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+                paths:
+                    - ./node_modules
+            - run:
+                name: Install aryashreep.github.io
+                command: |
+                  sudo npm install -g @angular/cli@latest
+                  sudo npm install -g angular-cli-ghpages
+                  sudo npm install typescript@'>=2.4.2 <2.6.0'
+
+            - run:
+                name: Deployment the build
+                command: angular-cli-ghpages --no-silent --branch=master
+        
 workflows:
   version: 2
   default_workflow:
     jobs:
-      - karma
-
-general:
-  branches:
-    only:
-      - master
+      - unit-test
+      - build-job
+          requires:
+            - unit-test
+      - deploy-job
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: master
