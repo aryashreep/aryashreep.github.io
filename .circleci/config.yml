@@ -102,11 +102,7 @@ workflows:
     jobs:
       - unit-test
       - build-job
-          requires:
-            - unit-test
-          - deploy-job
-            requires:
-              - build-job
-                filters:
-                  branches:
-                    only: master
+      - deploy-job
+    filters:
+      branches:
+        only: master
