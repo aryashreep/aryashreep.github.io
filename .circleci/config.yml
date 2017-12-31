@@ -29,12 +29,17 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
+                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
 
             - run:
                 name: Run unit tests with karma
                 command: ng test --watch false -cc
+                
+            - run:
+                name: Run end to end test
+                command: ng e2e
                 
             - store_test_results:
                 path: test-results.xml
@@ -49,11 +54,16 @@ jobs:
             - checkout
             - run:
                 name: Install node_modules with npm
-                command: npm install
+                command: |
+                  node --version
+                  npm --version
+                  npm install --no-save
+
             - save_cache:
-                key: dependency-cache-{{ checksum "package.json" }}
+                key: dependency-cache-{{ checksum "package-lock.json" }}
                 paths:
-                    - ./node_modules
+                    - "node_modules"
+
             - run:
                 name: Install aryashreep.github.io
                 command: |
