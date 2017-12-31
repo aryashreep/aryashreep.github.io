@@ -102,8 +102,8 @@ workflows:
     jobs:
       - unit-test
       - build-job
-        requires:
-          - unit-test
+          requires:
+            - unit-test
           - deploy-job
             requires:
               - build-job
