@@ -114,7 +114,7 @@ jobs:
 
             - run:
                 name: Deployment the build
-                command: angular-cli-ghpages --no-silent --branch=master
+                command: angular-cli-ghpages --no-silent --name="aryashreep" --email=aryashree@etechbuddy.com --branch=master
 
 workflows:
   version: 2
