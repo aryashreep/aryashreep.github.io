@@ -121,7 +121,8 @@ jobs:
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
                   sudo mkdir deploy-branch
                   sudo chmod -R 777 deploy-branch
-                  echo whoami
+                  echo "Owner and group"
+                  whoami
                   sudo chown -R $(id -u):$(id -g) deploy-branch
                   cd deploy-branch
                   git config --global user.email "aryashree@etechbuddy.com" > /dev/null 2>&1
@@ -131,7 +132,7 @@ jobs:
                   git checkout --orphan master
                   sudo cp -a /tmp/dist/. ~/aryashreep.github.io/dist/
                   git add -A
-                  git commit --allow-empty -m "Deploy to eTechBuddy.com [ci skip]"
+                  git commit --allow-empty -m "Deploy to eTechBuddy.com (`date '+%F %T %Z'`) [ci skip]"
                   git push --force --quiet origin master > /dev/null 2>&1
                   cd ..
                   sudo rm -rf /tmp/dist
