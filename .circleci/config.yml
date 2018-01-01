@@ -115,9 +115,9 @@ jobs:
             - run:
                 name: Deployment the build
                 command: |
-                  ng build --prod --aot=false
                   sudo mkdir /tmp/dist
                   sudo chmod 777 /tmp/dist
+                  ng build --prod --aot=false
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
                   sudo mkdir deploy-branch
                   cd deploy-branch
@@ -129,12 +129,12 @@ jobs:
                   sudo cp -a /tmp/dist/. ~/aryashreep.github.io/dist/
                   git add -A
                   git commit --allow-empty -m "Deploy to eTechBuddy.com [ci skip]"
-                  git push --force --quiet origin master > /dev/null 2>&1                  
+                  git push --force --quiet origin master > /dev/null 2>&1
+                  sudo rm -rf .git                  
                   cd ..
                   sudo rm -rf /tmp/dist
                   sudo rm -rf deploy-branch
                   echo "Deployment finished!"
-                  
 
 workflows:
   version: 2
