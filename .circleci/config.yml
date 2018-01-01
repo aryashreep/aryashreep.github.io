@@ -136,7 +136,7 @@ jobs:
                   git init
                   git remote add --fetch origin https://github.com/aryashreep/aryashreep.github.io.git
                   git checkout --orphan master
-                  sudo cp -a /tmp/dist/. ~/aryashreep.github.io/deploy-branch/dist/
+                  sudo cp -a /tmp/dist/. ~/aryashreep.github.io/deploy-branch/
                   echo "List files and folder"
                   ls -l
                   git add -A
