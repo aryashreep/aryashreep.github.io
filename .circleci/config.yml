@@ -120,7 +120,6 @@ jobs:
                   ng build --prod --aot=false
                   echo "current dist"
                   ls -l ~/aryashreep.github.io/dist/
-                  ls -l /dist
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
                   echo "temp dist"
                   ls -l /tmp/dist/
