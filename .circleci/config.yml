@@ -120,10 +120,9 @@ jobs:
                   ng build --prod --aot=false
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
                   sudo mkdir deploy-branch
-                  sudo chmod 777 deploy-branch
-                  whoami
-                  currentuser=$(who | awk '{print $1}')}
-                  sudo chown -R $currentuser:$currentuser /var/www/$sitename
+                  sudo chmod -R 777 deploy-branch
+                  echo whoami
+                  sudo chown -R $(id -u):$(id -g) deploy-branch
                   cd deploy-branch
                   git config --global user.email "aryashree@etechbuddy.com" > /dev/null 2>&1
                   git config --global user.name "aryashreep" > /dev/null 2>&1
