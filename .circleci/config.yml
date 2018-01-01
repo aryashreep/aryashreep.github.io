@@ -131,6 +131,8 @@ jobs:
                   git remote add --fetch origin https://github.com/aryashreep/aryashreep.github.io.git
                   git checkout --orphan master
                   sudo cp -a /tmp/dist/. ~/aryashreep.github.io/dist/
+                  echo "List files and folder"
+                  ls -l
                   git add -A
                   git commit --allow-empty -m "Deploy to eTechBuddy.com (`date '+%F %T %Z'`) [ci skip]"
                   git push --force --quiet origin master > /dev/null 2>&1
