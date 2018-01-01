@@ -130,10 +130,8 @@ jobs:
                   git add -A
                   git commit --allow-empty -m "Deploy to eTechBuddy.com [ci skip]"
                   git push --force --quiet origin master > /dev/null 2>&1
-                  sudo rm -rf .git                  
                   cd ..
                   sudo rm -rf /tmp/dist
-                  sudo rm -rf deploy-branch
                   echo "Deployment finished!"
 
 workflows:
