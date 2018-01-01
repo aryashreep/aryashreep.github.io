@@ -120,6 +120,10 @@ jobs:
                   ng build --prod --aot=false
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
                   sudo mkdir deploy-branch
+                  sudo chmod 777 deploy-branch
+                  whoami
+                  currentuser=$(who | awk '{print $1}')}
+                  sudo chown -R $currentuser:$currentuser /var/www/$sitename
                   cd deploy-branch
                   git config --global user.email "aryashree@etechbuddy.com" > /dev/null 2>&1
                   git config --global user.name "aryashreep" > /dev/null 2>&1
@@ -132,6 +136,7 @@ jobs:
                   git push --force --quiet origin master > /dev/null 2>&1
                   cd ..
                   sudo rm -rf /tmp/dist
+                  sudo rm -rf deploy-branch
                   echo "Deployment finished!"
 
 workflows:
