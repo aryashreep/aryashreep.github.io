@@ -118,7 +118,12 @@ jobs:
                   sudo mkdir /tmp/dist
                   sudo chmod 777 /tmp/dist
                   ng build --prod --aot=false
+                  echo "current dist"
+                  ls -l ~/aryashreep.github.io/dist/
+                  ls -l /dist
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
+                  echo "temp dist"
+                  ls -l /tmp/dist/
                   sudo mkdir deploy-branch
                   sudo chmod -R 777 deploy-branch
                   echo "Owner and group"
