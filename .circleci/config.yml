@@ -119,13 +119,22 @@ jobs:
                   sudo mkdir /tmp/dist
                   sudo chmod 777 /tmp/dist
                   sudo cp -r ~/aryashreep.github.io/dist/. /tmp/dist/
-                  git checkout master
-                  sudo find . -path ./.git -prune -o -exec rm -rf {} \; 2> /dev/null
+                  sudo mkdir deploy-branch
+                  cd deploy-branch
+                  git config --global user.email "aryashree@etechbuddy.com" > /dev/null 2>&1
+                  git config --global user.name "aryashreep" > /dev/null 2>&1
+                  git init
+                  git remote add --fetch origin https://github.com/aryashreep/aryashreep.github.io.git
+                  git checkout --orphan master
                   sudo cp -a /tmp/dist/. ~/aryashreep.github.io/dist/
                   git add -A
                   git commit --allow-empty -m "Deploy to eTechBuddy.com [ci skip]"
-                  git push --force --quiet origin master > /dev/null 2>&1
+                  git push --force --quiet origin master > /dev/null 2>&1                  
+                  cd ..
                   sudo rm -rf /tmp/dist
+                  sudo rm -rf deploy-branch
+                  echo "Deployment finished!"
+                  
 
 workflows:
   version: 2
