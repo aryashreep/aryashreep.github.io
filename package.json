@@ -8,6 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
+	"lint:styles": "stylelint ./src/**/*.scss",
+	"lint:ci": "npm run lint && npm run lint:styles",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -49,6 +51,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^5.2.2",
+    "stylelint": "^8.4.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
     "typescript": "^2.5.3"

@@ -7,9 +7,9 @@ import { Articles } from '../interface/articles';
 @Injectable()
 export class ArticlesService {
   private _articlesURL = 'http://www.etechbuddy.com//assets/data/api/articles.json';
-  constructor( private http: Http) {  
+  constructor( private http: Http) {
   }
-  
+
   getArticles(): Observable<Articles[]> {
     return this.http
 	  .get(this._articlesURL)
@@ -18,8 +18,8 @@ export class ArticlesService {
 	  })
 	  .catch(this.handleError);
   }
-  
+
   private handleError(errror: Response) {
 	  return Observable.throw(errror.statusText);
-  }  
+  }
 }
