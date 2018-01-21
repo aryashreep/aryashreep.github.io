@@ -5,16 +5,16 @@ import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {
-	path: '',
+    path: '',
     component: HomeComponent,
-	pathMatch: 'full'
+    pathMatch: 'full'
   },
   {
-	path: 'about',
+    path: 'about',
     component: AboutComponent
   },
   {
-	path: '**', redirectTo: ''
+    path: '**', redirectTo: ''
   }
 ];
 

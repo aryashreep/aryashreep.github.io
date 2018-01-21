@@ -12,10 +12,10 @@ describe('AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-	  imports: [RouterTestingModule, HttpModule],
-      declarations: [ AboutComponent, SidebarComponent, FooterComponent ]
+      imports: [RouterTestingModule, HttpModule],
+      declarations: [AboutComponent, SidebarComponent, FooterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
