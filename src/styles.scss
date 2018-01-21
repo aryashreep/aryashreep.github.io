@@ -29,7 +29,7 @@ p {
 }
 
 h2.small-heading {
-  padding: 10px 0 10px 0;
+  padding: 10px 0;
   font-size: 2.25em;
   margin-bottom: 10px;
   position: relative;
@@ -39,17 +39,17 @@ h2.small-heading {
     position: absolute;
     font-family: 'FontAwesome';
     font-size: 35px;
-    content: "\f107";
+    content: '\f107';
     left: 48%;
     bottom: -28px;
     color: #073a63;
     background-color: #ffffff;
-    padding: 0px 8px;
+    padding: 0 8px;
   }
   &::before {
     position: absolute;
     bottom: -10px;
-    content: "";
+    content: '';
     height: 2px;
     background-color: #073a63;
     display: block;
@@ -69,7 +69,7 @@ body {
 
 /* Page specific footer background colour */
 .profile-page .footer {
-  background-color: #01213B;
+  background-color: #01213b;
 }
 
 /*-------------------------------------------------
@@ -175,18 +175,18 @@ body {
     &:nth-child(2) {
       left: 22px;
       background: #9b59b6;
-      animation-delay: .2s;
+      animation-delay: 0.2s;
     }
     &:nth-child(3) {
       top: 22px;
       background: #3498db;
-      animation-delay: .4s;
+      animation-delay: 0.4s;
     }
     &:nth-child(4) {
       top: 22px;
       left: 22px;
       background: #f1c40f;
-      animation-delay: .6s;
+      animation-delay: 0.6s;
     }
   }
 }
@@ -255,7 +255,7 @@ body {
     h1 {
 	  font-size: 22px !important;
       margin-bottom: 12px !important;
-      padding-left: 0px !important;
+      padding-left: 0 !important;
     }
     span {
       font-size: 22px !important;
@@ -275,7 +275,7 @@ body {
     margin-top: 20px !important;
   }
   .close-btn {
-    background: url(./assets/images/close_sm.png);
+    background: url('./assets/images/close_sm.png');
   }
   .footer {
     .copyright {
@@ -293,11 +293,12 @@ body {
 @media screen and (max-width: 767px) and (orientation: landscape) {
   .mask {
     margin: 0;
-	img {
-	  width: 15% !important;
-	  margin: 0 0 0 -162px;
-	}	
+    img {
+      width: 15% !important;
+      margin: 0 0 0 -162px;
+    }
   }
+
   .intro-content {
     top: 8% !important;
   }
