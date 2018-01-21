@@ -2,7 +2,6 @@
 eTechBuddy.com is Arya's portfolio and blogging site.
 
 <!-- Badges section here. -->
-[![Build Status](https://img.shields.io/travis/aryashreep/aryashreep.github.io/devlopment.svg?label=travis)](https://travis-ci.org/aryashreep/aryashreep.github.io)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/aryashreep/aryashreep.github.io/devlopment.svg?label=circleci)](https://circleci.com/gh/aryashreep/aryashreep.github.io)
 [![Dependency Status](https://david-dm.org/aryashreep/aryashreep.github.io.svg)](https://david-dm.org/aryashreep/aryashreep.github.io)
 [![devDependency Status](https://david-dm.org/aryashreep/aryashreep.github.io/dev-status.svg)](https://david-dm.org/aryashreep/aryashreep.github.io?type=dev)
