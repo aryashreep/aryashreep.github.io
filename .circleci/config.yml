@@ -34,7 +34,7 @@ jobs:
 
             - run:
                 name: Run code validation
-                command: npm run lint && npm run lint:styles
+                command: ng lint && npm run lint:styles
 
     unit-test:
         working_directory: ~/aryashreep.github.io
