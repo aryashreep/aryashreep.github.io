@@ -57,7 +57,7 @@
     color: #035d63;
     font-size: 80px;
     font-weight: 700;
-    line-height: 0px;
+    line-height: 0;
     letter-spacing: 1px;
     &.number {
       font-size: 15em;
@@ -86,7 +86,7 @@
     + .tooltip > {
       .tooltip-inner {
         background-color: transparent;
-        color: #00B796;
+        color: #00b796;
         font-size: 16px;
       }
       .tooltip-arrow {
@@ -94,7 +94,7 @@
       }
     }
     &:hover {
-      color: #00B796;
+      color: #00b796;
     }
   }
 }
@@ -177,7 +177,7 @@
     margin: 0;
     letter-spacing: 1px;
     span {
-      color: #00B796;
+      color: #00b796;
     }
   }
 }

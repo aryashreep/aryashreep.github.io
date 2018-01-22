@@ -18,7 +18,7 @@
 				</div>
 				<div class="row no-gutters">
 					<!-- About us content goes here -->
-					<div *ngFor="let article of _articlesArray">
+					<div *ngFor="let article of articles">
 						<div [innerHTML]="article.articleBody">{{article.articleBody}}</div>
 					</div>
 				</div>
