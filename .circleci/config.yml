@@ -31,6 +31,7 @@ jobs:
                   sudo npm install -g @angular/cli
                   sudo mkdir dist
                   sudo chmod 777 dist
+                  npm install
 
             - run:
                 name: Run code validation
