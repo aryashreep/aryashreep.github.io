@@ -34,6 +34,7 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
+                  sudo mkdir -p ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer
                   sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
