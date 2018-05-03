@@ -39,6 +39,7 @@ jobs:
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
                   sudo apt-get update
+                  sudo apt-get install -f
                   sudo apt-get install lsb-release
                   curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                   sudo dpkg -i google-chrome.deb
