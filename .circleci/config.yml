@@ -39,7 +39,8 @@ jobs:
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
                   sudo apt-get update
-                  sudo apt-get install -f
+                  apt-cache search libappindicator3  gir1.2-appindicator3-0.1 - Typelib fi gir1.2-appindicator3-0.1 - Typelib files for libappindicator3-1
+                  sudo apt-get install -y libappindicator3-1
                   sudo apt-get install lsb-release
                   curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                   sudo dpkg -i google-chrome.deb
