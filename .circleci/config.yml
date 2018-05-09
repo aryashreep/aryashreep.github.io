@@ -9,7 +9,7 @@ jobs:
         working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
         docker:
-            - image: circleci/node:7.10.0-browsers
+            - image: circleci/node:10.0.0-browsers
               environment:
                   CHROME_BIN: "/usr/bin/google-chrome"
             # Specify service dependencies here if necessary
