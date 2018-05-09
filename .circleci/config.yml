@@ -33,6 +33,7 @@ jobs:
                 command: |
                   sudo chown -R $(whoami) /usr/local/
                   npm install npm@latest -g
+                  npm install -g @angular/cli
             # Cache local dependencies if they don't exist
             - save_cache:
                 key: v1-dependencies-{{ checksum "package.json" }}			
