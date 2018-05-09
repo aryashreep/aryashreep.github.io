@@ -19,34 +19,23 @@ jobs:
         steps:
             - checkout
             - run:
-                name: Install node_modules with npm
+                name: Show current branch
                 command: |
-                  node --version
-                  npm --version
-                  npm install --no-save
-
+                  echo ${CIRCLE_BRANCH}
+            # Restore local dependencies from cache
+            - restore_cache:
+                key: | 
+                  - v1-dependencies-{{ checksum "package.json" }}
+                  - v1-dependencies-
+            # Install project dependencies
+            - run:
+                name: Install local dependencies
+                command: npm install
+            # Cache local dependencies if they don't exist
             - save_cache:
-                key: dependency-cache-{{ checksum "package-lock.json" }}
+                key: v1-dependencies-{{ checksum "package.json" }}			
                 paths:
                     - "node_modules"
-
-            - run:
-                name: Install aryashreep.github.io
-                command: |
-                  sudo npm install -g @angular/cli
-                  sudo mkdir ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer
-                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
-                  sudo touch test-results.xml
-                  sudo chmod 777 test-results.xml
-                  sudo apt-get update
-                  apt-cache search libappindicator3  gir1.2-appindicator3-0.1 - Typelib fi gir1.2-appindicator3-0.1 - Typelib files for libappindicator3-1
-                  sudo apt-get install -y libappindicator3-1
-                  sudo apt-get install lsb-release
-                  curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-                  sudo dpkg -i google-chrome.deb
-                  sudo sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-                  rm google-chrome.deb
-
             - run:
                 name: Run unit tests with karma
                 command: ng test --watch false -cc
