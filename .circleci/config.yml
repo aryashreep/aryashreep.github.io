@@ -33,6 +33,7 @@ jobs:
             - run:
                 name: Install aryashreep.github.io
                 command: |
+                  sudo chown -R $(whoami) /usr/local/
                   sudo chown -R $(whoami) ~/aryashreep.github.io
                   npm install -g @angular/cli
                   sudo mkdir ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer
