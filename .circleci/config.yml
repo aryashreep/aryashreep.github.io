@@ -32,6 +32,7 @@ jobs:
                 name: Install local dependencies
                 command: |
                   sudo chown -R $(whoami) /usr/local/
+                  npm cache clean -f				  
                   npm install npm@latest -g
                   npm install -g @angular/cli
             # Cache local dependencies if they don't exist
