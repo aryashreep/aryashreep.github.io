@@ -82,7 +82,6 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
-                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
                   sudo mkdir dist
                   sudo chmod 777 dist
 
@@ -111,7 +110,6 @@ jobs:
                 command: |
                   sudo npm install -g @angular/cli
                   sudo npm install -g angular-cli-ghpages
-                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
                   sudo mkdir dist
                   sudo chmod 777 dist
 
