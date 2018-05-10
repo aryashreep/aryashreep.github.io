@@ -82,6 +82,7 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
+                  npm install --save-dev cuint
                   sudo mkdir dist
                   sudo chmod 777 dist
 
@@ -110,6 +111,7 @@ jobs:
                 command: |
                   sudo npm install -g @angular/cli
                   sudo npm install -g angular-cli-ghpages
+                  npm install --save-dev cuint
                   sudo mkdir dist
                   sudo chmod 777 dist
 
