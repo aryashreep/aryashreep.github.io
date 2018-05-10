@@ -9,7 +9,7 @@ jobs:
         working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
         docker:
-            - image: circleci/node:7.10.0-browsers
+            - image: circleci/node:10.0.0-browsers
               environment:
                   CHROME_BIN: "/usr/bin/google-chrome"
             # Specify service dependencies here if necessary
@@ -28,16 +28,19 @@ jobs:
             - save_cache:
                 key: dependency-cache-{{ checksum "package-lock.json" }}
                 paths:
-                    - "node_modules"
+                    - node_modules
 
             - run:
                 name: Install aryashreep.github.io
                 command: |
-                  sudo npm install -g @angular/cli
-                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
+                  sudo chown -R $(whoami) /usr/local/
+                  npm install -g @angular/cli
+                  npm install --save-dev cuint				  
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
                   sudo apt-get update
+                  apt-cache search libappindicator3  gir1.2-appindicator3-0.1 - Typelib fi gir1.2-appindicator3-0.1 - Typelib files for libappindicator3-1
+                  sudo apt-get install -y libappindicator3-1
                   sudo apt-get install lsb-release
                   curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
                   sudo dpkg -i google-chrome.deb
@@ -59,7 +62,7 @@ jobs:
         working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
         docker:
-            - image: circleci/node:7.10.0
+            - image: circleci/node:10.0.0
 
         steps:
             - checkout
@@ -79,7 +82,7 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
-                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
+                  npm install --save-dev cuint
                   sudo mkdir dist
                   sudo chmod 777 dist
 
@@ -92,7 +95,7 @@ jobs:
         working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
         docker:
-            - image: circleci/node:7.10.0
+            - image: circleci/node:10.0.0
 
         steps:
             - checkout
@@ -108,7 +111,7 @@ jobs:
                 command: |
                   sudo npm install -g @angular/cli
                   sudo npm install -g angular-cli-ghpages
-                  sudo cp -r ~/aryashreep.github.io/node_modules/autoprefixer/* ~/aryashreep.github.io/node_modules/@angular/cli/node_modules/autoprefixer/
+                  npm install --save-dev cuint
                   sudo mkdir dist
                   sudo chmod 777 dist
 

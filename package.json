@@ -25,10 +25,12 @@
     "bootstrap": "4.0.0-beta.2",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "hoek": "^4.2.1",
     "ionicons": "^3.0.0",
-    "jquery": "^1.9.1",
+    "jquery": "^3.0.0",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.2",
+    "ssri": "^5.2.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
