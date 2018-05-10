@@ -35,6 +35,7 @@ jobs:
                 command: |
                   sudo chown -R $(whoami) /usr/local/
                   npm install -g @angular/cli
+                  npm install --save-dev cuint				  
                   sudo touch test-results.xml
                   sudo chmod 777 test-results.xml
                   sudo apt-get update
