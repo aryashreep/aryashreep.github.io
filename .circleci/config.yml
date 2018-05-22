@@ -5,6 +5,35 @@
 version: 2
 
 jobs:
+    coding-standard:
+        working_directory: ~/aryashreep.github.io
+        # The primary container is an instance of the first list image listed. Your code validation commands run in this container.
+        docker:
+            - image: circleci/node:10.0.0
+
+        steps:
+            - checkout
+            - run:
+                name: Install node_modules with npm
+                command: |
+                  node --version
+                  npm --version
+                  npm install --no-save
+
+            - save_cache:
+                key: dependency-cache-{{ checksum "package-lock.json" }}
+                paths:
+                    - "node_modules"
+
+            - run:
+                name: Install aryashreep.github.io
+                command: |
+                  sudo npm install -g @angular/cli
+                  npm install --save-dev cuint
+
+            - run:
+                name: Run code validation
+                command: ng lint && npm run lint:styles
     unit-test:
         working_directory: ~/aryashreep.github.io
         # The primary container is an instance of the first list image listed. Your test commands run in this container.
@@ -144,7 +173,10 @@ workflows:
   version: 2
   default-workflow:
     jobs:
-      - unit-test
+      - coding-standard
+      - unit-test:
+          requires:
+            - coding-standard
       - build-job:
           requires:
             - unit-test
