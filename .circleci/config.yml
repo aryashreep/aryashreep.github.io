@@ -7,7 +7,7 @@ version: 2
 jobs:
     coding-standard:
         working_directory: ~/aryashreep.github.io
-        # The primary container is an instance of the first list image listed. Your test commands run in this container.
+        # The primary container is an instance of the first list image listed. Your code validation commands run in this container.
         docker:
             - image: circleci/node:10.0.0
 
@@ -29,9 +29,7 @@ jobs:
                 name: Install aryashreep.github.io
                 command: |
                   sudo npm install -g @angular/cli
-                  sudo mkdir dist
-                  sudo chmod 777 dist
-                  npm install
+                  npm install --save-dev cuint
 
             - run:
                 name: Run code validation
