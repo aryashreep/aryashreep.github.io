@@ -12,15 +12,15 @@
 }
 
 .contact-page .footer {
-  background-color: #935B25;
+  background-color: #935b25;
 }
 
 .footer {
-  padding: 20px 0px 10px 0px;
+  padding: 20px 0 10px;
   .copyright {
     color: #fff;
     float: left;
-	padding-left: 25px;
+	  padding-left: 25px;
   }
   .author {
     float: right;
@@ -30,7 +30,7 @@
   }
   a {
     text-decoration: none;
-    color: #5F9EA0;
+    color: #5f9ea0;
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
@@ -40,7 +40,7 @@
 }
 
 .contact-page .footer a {
-  color: #F1AD5C;
+  color: #f1ad5c;
 }
 
 .footer a:hover {

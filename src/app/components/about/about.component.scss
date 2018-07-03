@@ -54,7 +54,7 @@
     margin-bottom: 20px;
   }
   p {
-    color: #fff;
+    color: #ffffff;
     &.count {
       font-size: 29px;
     }
@@ -63,7 +63,7 @@
 
 .team-member-box {
   background-color: #f3f3f3;
-  border: 1px solid #F3f3f3;
+  border: 1px solid #f3f3f3;
   margin-bottom: 50px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -73,7 +73,6 @@
   h4 {
     margin-bottom: 5px;
     margin-top: 15px;
-    /*font-size: 18px;*/
     font-size: 1.5em;
   }
   p {
@@ -94,7 +93,7 @@
 
 
 
-:host ::ng-deep .profile-page .about-us-desc p{
+:host ::ng-deep .profile-page .about-us-desc p {
   font-size: 1em;
   line-height: 1.42;
   &:first-child {
@@ -128,10 +127,10 @@
   }
 }
 
-:host ::ng-deep .profile-page .about-us-desc{
+:host ::ng-deep .profile-page .about-us-desc {
   .user-image {
     overflow:hidden;
-	float:left;
+	  float:left;
   }
   .social-media {
 	font-size: 25px;

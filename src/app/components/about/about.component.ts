@@ -12,7 +12,6 @@ import { Articles } from '../../interface/articles';
 export class AboutComponent implements OnInit {
   title = 'Aryashree Pritikrishna :: Portfolio :: eTechBuddy';
   _articlesArray: Articles[];
-
   constructor(private titleService: Title, private articlesSerivce: ArticlesService) { }
 
   getArticles(): void {
