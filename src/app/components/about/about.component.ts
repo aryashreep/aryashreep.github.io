@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ArticlesService } from '../../service/articles.service';
 import { Articles } from '../../interface/articles';
@@ -10,21 +10,20 @@ import { Articles } from '../../interface/articles';
   providers: [ArticlesService]
 })
 export class AboutComponent implements OnInit {
-  title = "Arya's portfolio :: eTechBuddy";
+  title = 'Aryashree Pritikrishna :: Portfolio :: eTechBuddy';
   _articlesArray: Articles[];
-  
   constructor(private titleService: Title, private articlesSerivce: ArticlesService) { }
 
-  getArticles(): void{
-	this.articlesSerivce.getArticles()
-	  .subscribe(
-		resultArray => this._articlesArray = resultArray,
-		error => console.log('Error :: ' + error)
-	  )
-  }  
-  
+  getArticles(): void {
+    this.articlesSerivce.getArticles()
+      .subscribe(
+      resultArray => this._articlesArray = resultArray,
+      error => console.log('Error :: ' + error)
+      );
+  }
+
   ngOnInit() {
-	  this.titleService.setTitle(this.title);
-	  this.getArticles();
+    this.titleService.setTitle(this.title);
+    this.getArticles();
   }
 }
