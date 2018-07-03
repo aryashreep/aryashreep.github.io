@@ -10,7 +10,7 @@ import { Articles } from '../../interface/articles';
   providers: [ArticlesService]
 })
 export class AboutComponent implements OnInit {
-  title = "Arya's portfolio :: eTechBuddy";
+  title = 'Aryashree Pritikrishna :: Portfolio :: eTechBuddy';
   _articlesArray: Articles[];
 
   constructor(private titleService: Title, private articlesSerivce: ArticlesService) { }
