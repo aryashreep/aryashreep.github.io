@@ -60,7 +60,7 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                ""
+                "Drupal"
             ],
             "genre": [
                 "Tutorials",
@@ -198,7 +198,9 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Drupal",
+                "core code update",
+                "git"
             ],
             "genre": [
                 "Tutorials",
@@ -750,7 +752,10 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Drupal",
+                "allocate memory",
+                "fork",
+                "Unable to fork new process"
             ],
             "genre": [
                 "Tutorials",
@@ -957,7 +962,9 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Drush",
+                "Vagrant",
+                "Drupal"
             ],
             "genre": [
                 "Tutorials",
@@ -1026,7 +1033,12 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Drupal",
+                "Apache",
+                "Solr Features",
+                "Apache Solr Features",
+                "Drupal search",
+                "search"
             ],
             "genre": [
                 "Tutorials",
@@ -1095,7 +1107,9 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Cache oblivious algorithm",
+                "CPU bound",
+                "I\/O bound"
             ],
             "genre": [
                 "Tutorials",
@@ -1785,7 +1799,12 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "php",
+                "drupal",
+                "Preprocess",
+                "theme",
+                "variables",
+                "templates."
             ],
             "genre": [
                 "Tutorials",
@@ -1854,7 +1873,11 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "php",
+                "drupal",
+                "etechbuddy.com",
+                "www.etechbuddy.com",
+                "Online tutorials"
             ],
             "genre": [
                 "Tutorials",
@@ -2130,7 +2153,9 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Honeypot",
+                "spam bot",
+                "protection"
             ],
             "genre": [
                 "Tutorials",
@@ -10203,7 +10228,15 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "php",
+                "drupal",
+                "wordpress",
+                "zend framework",
+                "cakePHP",
+                "MySql",
+                "html",
+                "css",
+                "Responsive web design"
             ],
             "genre": [
                 "Tutorials",
@@ -11100,7 +11133,10 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Upgrade",
+                "update",
+                "drupal 6",
+                "drupal 7"
             ],
             "genre": [
                 "Tutorials",
@@ -11583,7 +11619,27 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "Drupal 6 Database abstraction layer",
+                "css",
+                "tutorial",
+                "skill test",
+                "xhtml",
+                "javascript",
+                "jquery",
+                "sql",
+                "soap",
+                "rss",
+                "programming",
+                "training",
+                "learning",
+                "quiz",
+                "beginner's guide",
+                "tips",
+                "dynamic html",
+                "internet",
+                "database",
+                "development",
+                "Web building"
             ],
             "genre": [
                 "Tutorials",
@@ -11721,7 +11777,30 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "MULTILINGUAL SITE",
+                "drupal",
+                "zend framework",
+                "cakePHP",
+                "MySql",
+                "html",
+                "css",
+                "xhtml",
+                "javascript",
+                "jquery",
+                "sql",
+                "soap",
+                "rss",
+                "programming",
+                "training",
+                "learning",
+                "quiz",
+                "beginner's guide",
+                "tips",
+                "dynamic html",
+                "internet",
+                "database",
+                "development",
+                "Web building"
             ],
             "genre": [
                 "Tutorials",
@@ -12204,7 +12283,32 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "[node:title]",
+                "wordpress",
+                "zend framework",
+                "cakePHP",
+                "MySql",
+                "html",
+                "css",
+                "tutorial",
+                "skill test",
+                "xhtml",
+                "javascript",
+                "jquery",
+                "sql",
+                "soap",
+                "rss",
+                "programming",
+                "training",
+                "learning",
+                "quiz",
+                "beginner's guide",
+                "tips",
+                "dynamic html",
+                "internet",
+                "database",
+                "development",
+                "Web building"
             ],
             "genre": [
                 "Tutorials",
@@ -12342,7 +12446,7 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "[node:title]"
             ],
             "genre": [
                 "Tutorials",
@@ -12411,7 +12515,7 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "[node:title]"
             ],
             "genre": [
                 "Tutorials",
@@ -12618,7 +12722,7 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "[node:title]"
             ],
             "genre": [
                 "Tutorials",
@@ -12687,7 +12791,7 @@
             },
             "mainEntityOfPage": "True",
             "keywords": [
-                "1"
+                "[node:title]"
             ],
             "genre": [
                 "Tutorials",

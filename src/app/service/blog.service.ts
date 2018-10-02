@@ -4,8 +4,12 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class BlogService {
-  private url = "http://localhost:4200/assets/data/api/blogs.json";
-  constructor(private http: HttpClient) { }
+  private url: string;
+  baseUrl: any;
+  constructor(private http: HttpClient) {
+    this.baseUrl = window.location.origin;
+    this.url = this.baseUrl + "/assets/data/api/blogs.json";
+  }
   getBlog(): Observable<any> {
     return this.http.get<any>(this.url);
   }

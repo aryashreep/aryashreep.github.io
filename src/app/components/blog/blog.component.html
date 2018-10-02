@@ -1,5 +1,5 @@
 <!-- BLOG Page -->
-<div class="profile-page page">
+<div class="blog-page page">
   <div class="row no-gutters">
     <!--SIDEBAR-->
     <app-sidebar></app-sidebar>
@@ -13,17 +13,18 @@
           <!-- BLOG LISTING HERE -->
           <div *ngFor="let blog of blogData.data">
             <!-- Card -->
-            <div class="card ml-2 mr-2 mb-2" style="min-width: 18rem; max-width: 18rem;">
+            <div class="card ml-2 mr-2 mb-2 p-3 card-cascade" style="min-width: 18rem; max-width: 18rem;">
               <!-- Card image -->
-              <div class="view overlay">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-                  alt="Card image cap">
+              <div class="view view-cascade overlay">
+                  <div class="justify-content-center h-100 d-flex">
+                  <i class="fab fa-{{blog.keywords[0] | lowercase | default:'blogger'}} fa-w-14 fa-7x hover-cyan flex flex-column items-center justify-center"></i>
+                  </div>
                 <a href="#!">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
               <!-- Card content -->
-              <div class="card-body">
+              <div class="card-body card-body-cascade">
                 <!-- Title -->
                 <h4 class="card-title">{{blog.headline}}</h4>
                 <!-- Text -->

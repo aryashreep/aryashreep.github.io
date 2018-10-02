@@ -15,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogService } from './service/blog.service';
 import { TruncateTextPipe } from './truncate-text.pipe';
+import { defaultPipe } from './default.pipe';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { TruncateTextPipe } from './truncate-text.pipe';
     BlogComponent,
     escapeHtmlPipe,
     StripHtmlPipe,
-    TruncateTextPipe
+    TruncateTextPipe,
+    defaultPipe
   ],
   imports: [
     BrowserModule,
