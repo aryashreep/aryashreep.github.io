@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SidebarComponent } from './sidebar.component';
 
 describe('SidebarComponent', () => {
@@ -20,6 +19,8 @@ describe('SidebarComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    let fixture = TestBed.createComponent(SidebarComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   });
 });

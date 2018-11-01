@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BlogComponent } from './blog.component';
+import { SidebarComponent } from './../sidebar/sidebar.component';
+import { FooterComponent } from './../footer/footer.component';
+import { DefaultPipe } from '../../default.pipe';
+import { escapeHtmlPipe } from '../../safe-html.pipe';
+import { StripHtmlPipe } from '../../strip-html.pipe';
+import { TruncateTextPipe } from '../../truncate-text.pipe';
+import { BlogService } from '../../service/blog.service';
+
 
 describe('BlogComponent', () => {
   let component: BlogComponent;
@@ -8,7 +15,8 @@ describe('BlogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogComponent ]
+      declarations: [ BlogComponent, SidebarComponent, FooterComponent, DefaultPipe, escapeHtmlPipe, StripHtmlPipe, TruncateTextPipe ],
+      providers: [BlogService]
     })
     .compileComponents();
   }));
@@ -20,6 +28,8 @@ describe('BlogComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    let fixture = TestBed.createComponent(BlogComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   });
 });
