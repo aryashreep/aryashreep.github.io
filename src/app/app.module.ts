@@ -10,11 +10,11 @@ import { AboutComponent } from './components/about/about.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { BlogService } from './service/blog.service';
 import { DefaultPipe } from './default.pipe';
 import { escapeHtmlPipe } from './safe-html.pipe';
 import { StripHtmlPipe } from './strip-html.pipe';
 import { TruncateTextPipe } from './truncate-text.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { TruncateTextPipe } from './truncate-text.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BlogService
+    RouterModule
   ],
   exports: [
     HttpClientModule,
@@ -45,7 +45,6 @@ import { TruncateTextPipe } from './truncate-text.pipe';
     TruncateTextPipe,
     BlogComponent
   ],
-  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
