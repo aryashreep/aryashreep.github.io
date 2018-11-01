@@ -1,0 +1,45 @@
+<!-- BLOG Page -->
+<div class="blog-page page">
+  <div class="row no-gutters">
+    <!--SIDEBAR-->
+    <app-sidebar></app-sidebar>
+    <!--SIDEBAR-->
+    <!-- BLOG Page Content -->
+    <div class="content-container col-md-9 col-sm-12">
+      <!-- Story of Glory -->
+      <div class="clearfix">
+        <h2 class="small-heading">BLOG</h2>
+        <div class="row col-md-12 col-sm-12 mt-5 mb-4 ml-2 mr-3" *ngIf="blogData">
+          <!-- BLOG LISTING HERE -->
+          <div *ngFor="let blog of blogData.data">
+            <!-- Card -->
+            <div class="card ml-2 mr-2 mb-2 p-3 card-cascade" style="min-width: 18rem; max-width: 18rem;">
+              <!-- Card image -->
+              <div class="view view-cascade overlay">
+                  <div class="justify-content-center h-100 d-flex">
+                  <i class="fab fa-{{blog.keywords[0] | lowercase | default}} fa-w-14 fa-7x hover-cyan flex flex-column items-center justify-center"></i>
+                  </div>
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!-- Card content -->
+              <div class="card-body card-body-cascade">
+                <!-- Title -->
+                <h4 class="card-title">{{blog.headline}}</h4>
+                <!-- Text -->
+                <p class="card-text" [innerHTML]="blog.articleBody | safeHtml | striphtml | truncateText: 200 : '.'"></p>
+                <!-- Button -->
+                <a href="#" class="btn btn-primary">Button</a>
+              </div>
+            </div>
+            <!-- Card -->
+          </div>
+          <!-- BLOG LISTING HERE -->
+        </div>
+      </div>
+      <!-- Footer -->
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
