@@ -5,7 +5,7 @@ import { Articles } from '../interface/articles';
 
 @Injectable()
 export class ArticlesService {
-  private _articlesURL = 'https://xxx/assets/data/api/articles.json';
+  private _articlesURL = 'https://aryashreep.github.io/assets/data/api/articles.json';
   constructor(private http: HttpClient) {
   }
 
